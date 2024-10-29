@@ -13,7 +13,8 @@ class ContactUsController extends Controller
             $validatedData = $request->validate([
                 'name' => 'required|string',
                 'email' => 'required|email',
-                'subject' => 'required|string',
+                'phone' => 'nullable|string',
+                'subject' => 'nullable|string',
                 'enquiry' => 'required|string',
             ]);
 
