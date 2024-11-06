@@ -106,13 +106,21 @@ class ProductController extends Controller
                 'toysAndTendersDescription' => 'nullable|string',
                 'imageUpload' => 'required|array',
                 'imageUpload.*' => 'mimes:png,jpg,jpeg|max:10000', 
+
+                // 'price' => 'required|integer',
+                // 'capacity' => 'required|integer',
+                // 'pictureSpots' => 'nullable|integer',
+                // 'bedrooms' => 'required|integer',
+                // 'repairDate' => 'nullable|date',
+                // 'ratioOfSpace' => 'nullable|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
+                // 'perk' => 'nullable|string|max:255',
+
                 'price' => 'required|integer',
-                'capacity' => 'required|integer',
-                'pictureSpots' => 'nullable|integer',
-                'bedrooms' => 'required|integer',
-                'repairDate' => 'nullable|date',
-                'ratioOfSpace' => 'nullable|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
-                'perk' => 'nullable|string|max:255',
+                'guests' => 'required|integer',
+                'cabins' => 'required|integer',
+                'crew' => 'required|integer',
+                'year' => 'required|integer',
+
                 'length' => 'nullable|string|max:255',
                 'beam' => 'nullable|string|max:255',
                 'draft' => 'nullable|string|max:255',
@@ -151,13 +159,21 @@ class ProductController extends Controller
                 'interiorDesignDescription' => $validatedData['interiorDesignDescription'],
                 'toysAndTendersDescription' => $validatedData['toysAndTendersDescription'],
                 'imageURL' => $imagePathsString, 
+
+                // 'price' => $validatedData['price'],
+                // 'capacity' => $validatedData['capacity'],
+                // 'pictureSpots' => $validatedData['pictureSpots'],
+                // 'bedrooms' => $validatedData['bedrooms'],
+                // 'repairDate' => $validatedData['repairDate'],
+                // 'ratioOfSpace' => $validatedData['ratioOfSpace'],
+                // 'perk' => $validatedData['perk'],
+
                 'price' => $validatedData['price'],
-                'capacity' => $validatedData['capacity'],
-                'pictureSpots' => $validatedData['pictureSpots'],
-                'bedrooms' => $validatedData['bedrooms'],
-                'repairDate' => $validatedData['repairDate'],
-                'ratioOfSpace' => $validatedData['ratioOfSpace'],
-                'perk' => $validatedData['perk'],
+                'guests' => $validatedData['guests'],
+                'cabins' => $validatedData['cabins'],
+                'crew' => $validatedData['crew'],
+                'year' => $validatedData['year'],
+
                 'length' => $validatedData['length'],
                 'beam' => $validatedData['beam'],
                 'draft' => $validatedData['draft'],
@@ -207,13 +223,21 @@ class ProductController extends Controller
                 'toysAndTendersDescription' => 'nullable|string',
                 'imageUpload' => 'required|array',
                 'imageUpload.*' => 'mimes:png,jpg,jpeg|max:10000', 
+
+                // 'price' => 'required|integer',
+                // 'capacity' => 'required|integer',
+                // 'pictureSpots' => 'nullable|integer',
+                // 'bedrooms' => 'required|integer',
+                // 'repairDate' => 'nullable|date',
+                // 'ratioOfSpace' => 'nullable|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
+                // 'perk' => 'nullable|string|max:255',
+
                 'price' => 'required|integer',
-                'capacity' => 'required|integer',
-                'pictureSpots' => 'nullable|integer',
-                'bedrooms' => 'required|integer',
-                'repairDate' => 'nullable|date',
-                'ratioOfSpace' => 'nullable|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
-                'perk' => 'nullable|string|max:255',
+                'guests' => 'required|integer',
+                'cabins' => 'required|integer',
+                'crew' => 'required|integer',
+                'year' => 'required|integer',
+
                 'length' => 'nullable|string|max:255',
                 'beam' => 'nullable|string|max:255',
                 'draft' => 'nullable|string|max:255',
@@ -252,26 +276,34 @@ class ProductController extends Controller
                 'amenitiesDescription' => $validatedData['amenitiesDescription'],
                 'interiorDesignDescription' => $validatedData['interiorDesignDescription'],
                 'toysAndTendersDescription' => $validatedData['toysAndTendersDescription'],
-                'imageURL' => $imagePathsString,
+                'imageURL' => $imagePathsString, 
+
+                // 'price' => $validatedData['price'],
+                // 'capacity' => $validatedData['capacity'],
+                // 'pictureSpots' => $validatedData['pictureSpots'],
+                // 'bedrooms' => $validatedData['bedrooms'],
+                // 'repairDate' => $validatedData['repairDate'],
+                // 'ratioOfSpace' => $validatedData['ratioOfSpace'],
+                // 'perk' => $validatedData['perk'],
+
                 'price' => $validatedData['price'],
-                'capacity' => $validatedData['capacity'],
-                'pictureSpots' => $validatedData['pictureSpots'],
-                'bedrooms' => $validatedData['bedrooms'],
-                'repairDate' => $validatedData['repairDate'] ?? null, // Optional
-                'ratioOfSpace' => $validatedData['ratioOfSpace'] ?? null, // Optional
-                'perk' => $validatedData['perk'] ?? null, // Optional
-                'length' => $validatedData['length'] ?? null, // Optional
-                'beam' => $validatedData['beam'] ?? null, // Optional
-                'draft' => $validatedData['draft'] ?? null, // Optional
-                'cruisingSpeed' => $validatedData['cruisingSpeed'] ?? null, // Optional
-                'builder' => $validatedData['builder'] ?? null, // Optional
-                'navalArchitect' => $validatedData['navalArchitect'] ?? null, // Optional
-                'exteriorDesigner' => $validatedData['exteriorDesigner'] ?? null, // Optional
-                'interiorDesigner' => $validatedData['interiorDesigner'] ?? null, // Optional
-                'hullMaterial' => $validatedData['hullMaterial'] ?? null, // Optional
-                'superstructureMaterial' => $validatedData['superstructureMaterial'] ?? null, // Optional
-                'grossTonnage' => $validatedData['grossTonnage'] ?? null, // Optional
-                'deckMaterial' => $validatedData['deckMaterial'] ?? null, // Optional
+                'guests' => $validatedData['guests'],
+                'cabins' => $validatedData['cabins'],
+                'crew' => $validatedData['crew'],
+                'year' => $validatedData['year'],
+
+                'length' => $validatedData['length'],
+                'beam' => $validatedData['beam'],
+                'draft' => $validatedData['draft'],
+                'cruisingSpeed' => $validatedData['cruisingSpeed'],
+                'builder' => $validatedData['builder'],
+                'navalArchitect' => $validatedData['navalArchitect'],
+                'exteriorDesigner' => $validatedData['exteriorDesigner'],
+                'interiorDesigner' => $validatedData['interiorDesigner'],
+                'hullMaterial' => $validatedData['hullMaterial'],
+                'superstructureMaterial' => $validatedData['superstructureMaterial'],
+                'grossTonnage' => $validatedData['grossTonnage'],
+                'deckMaterial' => $validatedData['deckMaterial'],
             ]);
 
             // Return a success response

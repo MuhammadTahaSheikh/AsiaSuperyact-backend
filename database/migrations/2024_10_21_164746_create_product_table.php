@@ -19,14 +19,23 @@ return new class extends Migration {
             $table->text('interiorDesignDescription');
             $table->text('toysAndTendersDescription');
             $table->text('imageURL');
+            
+            // $table->unsignedInteger('price'); // Price should not be negative
+            // $table->unsignedInteger('capacity'); // Capacity should not be negative
+            // $table->unsignedInteger('pictureSpots'); // Picture spots should not be negative
+            // $table->unsignedInteger('bedrooms'); // Bedrooms should not be negative
+            // $table->dateTime('repairDate');
+            // // $table->string('ratioOfSpace');
+            // $table->decimal('ratioOfSpace', 8, 2); // Better to store as a decimal if it's a ratio
+            // $table->string('perk'); // Remains string, assuming it's a description
+
+            
             $table->unsignedInteger('price'); // Price should not be negative
-            $table->unsignedInteger('capacity'); // Capacity should not be negative
-            $table->unsignedInteger('pictureSpots'); // Picture spots should not be negative
-            $table->unsignedInteger('bedrooms'); // Bedrooms should not be negative
-            $table->dateTime('repairDate');
-            // $table->string('ratioOfSpace');
-            $table->decimal('ratioOfSpace', 8, 2); // Better to store as a decimal if it's a ratio
-            $table->string('perk'); // Remains string, assuming it's a description
+            $table->unsignedInteger('guests'); // Capacity should not be negative
+            $table->unsignedInteger('cabins'); // Picture spots should not be negative
+            $table->unsignedInteger('crew'); // Bedrooms should not be negative
+            $table->unsignedInteger('year');
+
             $table->string('length')->nullable(); // Length, e.g., "80m / 262ft"
             $table->string('beam')->nullable();   // Beam, e.g., "14.2m / 47ft"
             $table->string('draft')->nullable();  // Draft, e.g., "3.9m / 13ft"

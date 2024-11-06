@@ -19,13 +19,21 @@ class Product extends Model
         'interiorDesignDescription',
         'toysAndTendersDescription',
         'imageURL',
+
+        // 'price',
+        // 'capacity',
+        // 'pictureSpots',
+        // 'bedrooms',
+        // 'repairDate',
+        // 'ratioOfSpace',
+        // 'perk',
+
         'price',
-        'capacity',
-        'pictureSpots',
-        'bedrooms',
-        'repairDate',
-        'ratioOfSpace',
-        'perk',
+        'guests',
+        'cabins',
+        'crew',
+        'year',
+
         'length', // Yacht-specific attributes
         'beam',
         'draft',

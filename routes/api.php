@@ -8,6 +8,8 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\JobsController;
+use App\Http\Controllers\JobSubmissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +62,22 @@ Route::get('/product/{id}', [ProductController::class, 'getProductByID']);
 Route::get('/product/category/{id}', [ProductController::class, 'getProductByCategoryID']);
 Route::delete('/delete-product/{id}', [ProductController::class, 'deleteProduct']);
 Route::post('/edit-product/{id}', [ProductController::class, 'editProduct']);
+
+// Routes for Jobs
+
+Route::get('/jobs', [JobsController::class, 'getAllJobs']);
+Route::post('/add-job', [JobsController::class, 'addJob']);
+Route::get('/job/{id}', [JobsController::class, 'getJobByID']);
+Route::delete('/delete-job/{id}', [JobsController::class, 'deleteJob']);
+Route::post('/edit-job/{id}', [JobsController::class, 'editJob']);
+
+// Routes for Job Submission
+
+Route::get('/job-submission', [JobSubmissionController::class, 'getAllJobSubmissions']);
+Route::post('/add-job-submission', [JobSubmissionController::class, 'addJobSubmission']);
+Route::get('/job-submission/{id}', [JobSubmissionController::class, 'getJobSubmissionByID']);
+Route::delete('/delete-job-submission/{id}', [JobSubmissionController::class, 'deleteJobSubmission']);
+Route::post('/edit-job-submission/{id}', [JobSubmissionController::class, 'editJobSubmission']);
 
 // Routes for Contact Us form
 
