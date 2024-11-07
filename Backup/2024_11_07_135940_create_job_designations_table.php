@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('job_designations', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->unsignedBigInteger('jobCategoryID');
             $table->timestamps();
+
+            $table->foreign('jobCategoryID')->references('id')->on('job_categories')->onDelete('cascade');
         });
     }
 

@@ -24,7 +24,7 @@ class JobsController extends Controller
             $formattedJobs = $jobs->map(function ($job) {
                 return [
                     'id' => $job->id,
-                    'title' => $job->title, 
+                    'title' => $job->title,
                     'location' => $job->location,
                     'info' => [
                         $job->duration ? $job->duration : 'No duration provided',
@@ -65,6 +65,73 @@ class JobsController extends Controller
             return response()->json([
                 'message' => 'Job retrieved successfully!',
                 'data' => $job
+            ], 200); // Status code 200 for successful retrieval
+
+        } catch (\Exception $e) {
+            // Handle any errors
+            return response()->json([
+                'message' => 'Something went wrong!',
+                'error' => $e->getMessage()
+            ], 500); // Status code 500 for server error
+        }
+
+    }
+    public function getJobsBySearch(Request $request)
+    {
+        try {
+            // Retrieve the query parameters
+            $designation = $request->query('designation');
+            $yachtSize = $request->query('yacht_size');
+            $yachtType = $request->query('yacht_type');
+            $gender = $request->query('gender');
+
+            $jobs = Jobs::query();
+
+            if ($designation) {
+                $jobs->where('designation', $designation);
+            }
+
+            if ($yachtSize) {
+                $jobs->where('yachtSize', $yachtSize);
+            }
+
+            if ($yachtType) {
+                $jobs->where('yachtType', $yachtType);
+            }
+
+            if ($gender) {
+                $jobs->where('gender', $gender);
+            }
+
+            // Get the filtered results
+            $jobs = $jobs->get();
+            // Transform jobs data to match the desired format
+            $formattedJobs = $jobs->map(function ($job) {
+                return [
+                    'id' => $job->id,
+                    'title' => $job->title,
+                    'location' => $job->location,
+                    'info' => [
+                        $job->duration ? $job->duration : 'No duration provided',
+                        $job->qualification ? "Qualifications: " . $job->qualification : 'No qualification provided',
+                        $job->experience ? "Experience: " . $job->experience . " Year(s)" : 'No experience provided',
+                        $job->yachtSize ? "Yacht Size: " . $job->yachtSize : 'No yacht size provided',
+                    ]
+                ];
+            });
+
+            // Check if the job exists
+            if (!$formattedJobs) {
+                return response()->json([
+                    'message' => 'Job not found!',
+                    'data' => null
+                ], 404); // Status code 404 for not found
+            }
+
+            // If the job is found
+            return response()->json([
+                'message' => 'Job retrieved successfully!',
+                'data' => $formattedJobs
             ], 200); // Status code 200 for successful retrieval
 
         } catch (\Exception $e) {

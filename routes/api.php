@@ -70,24 +70,25 @@ Route::post('/edit-product/{id}', [ProductController::class, 'editProduct']);
 Route::get('/jobs', [JobsController::class, 'getAllJobs']);
 Route::post('/add-job', [JobsController::class, 'addJob']);
 Route::get('/job/{id}', [JobsController::class, 'getJobByID']);
+Route::get('/jobs-search', [JobsController::class, 'getJobsBySearch']);
 Route::delete('/delete-job/{id}', [JobsController::class, 'deleteJob']);
 Route::post('/edit-job/{id}', [JobsController::class, 'editJob']);
 
 // Routes for Job Category
 
-Route::get('/job-categories', [JobCategoryController::class, 'getAllJobCategories']);
-Route::post('/add-job-category', [JobCategoryController::class, 'addJobCategory']);
-Route::get('/job-category/{id}', [JobCategoryController::class, 'getJobCategoryByID']);
-Route::delete('/delete-job-category/{id}', [JobCategoryController::class, 'deleteJobCategory']);
-Route::post('/edit-job-category/{id}', [JobCategoryController::class, 'editJobCategory']);
+// Route::get('/job-categories', [JobCategoryController::class, 'getAllJobCategories']);
+// Route::post('/add-job-category', [JobCategoryController::class, 'addJobCategory']);
+// Route::get('/job-category/{id}', [JobCategoryController::class, 'getJobCategoryByID']);
+// Route::delete('/delete-job-category/{id}', [JobCategoryController::class, 'deleteJobCategory']);
+// Route::post('/edit-job-category/{id}', [JobCategoryController::class, 'editJobCategory']);
 
 // Routes for Job Designation
 
-Route::get('/job-designations', [JobDesignationController::class, 'getAllJobDesignations']);
-Route::post('/add-job-designation', [JobDesignationController::class, 'addJobDesignation']);
-Route::get('/job-designation/{id}', [JobDesignationController::class, 'getJobDesignationByID']);
-Route::delete('/delete-job-designation/{id}', [JobDesignationController::class, 'deleteJobDesignation']);
-Route::post('/edit-job-designation/{id}', [JobDesignationController::class, 'editJobDesignation']);
+// Route::get('/job-designations', [JobDesignationController::class, 'getAllJobDesignations']);
+// Route::post('/add-job-designation', [JobDesignationController::class, 'addJobDesignation']);
+// Route::get('/job-designation/{id}', [JobDesignationController::class, 'getJobDesignationByID']);
+// Route::delete('/delete-job-designation/{id}', [JobDesignationController::class, 'deleteJobDesignation']);
+// Route::post('/edit-job-designation/{id}', [JobDesignationController::class, 'editJobDesignation']);
 
 // Routes for Job Submission
 
