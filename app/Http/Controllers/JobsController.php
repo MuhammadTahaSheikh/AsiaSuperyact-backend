@@ -85,26 +85,29 @@ class JobsController extends Controller
             $yachtType = $request->query('yacht_type');
             $gender = $request->query('gender');
 
-            $jobs = Jobs::query();
+            // Start the query builder for Jobs
+            $jobsQuery = Jobs::query();
 
+            // Apply filters if they are provided
             if ($designation) {
-                $jobs->where('designation', $designation);
+                $jobsQuery->where('designation', $designation);
             }
 
             if ($yachtSize) {
-                $jobs->where('yachtSize', $yachtSize);
+                $jobsQuery->where('yachtSize', $yachtSize);
             }
 
             if ($yachtType) {
-                $jobs->where('yachtType', $yachtType);
+                $jobsQuery->where('yachtType', $yachtType);
             }
 
             if ($gender) {
-                $jobs->where('gender', $gender);
+                $jobsQuery->where('gender', $gender);
             }
 
             // Get the filtered results
-            $jobs = $jobs->get();
+            $jobs = $jobsQuery->get();
+
             // Transform jobs data to match the desired format
             $formattedJobs = $jobs->map(function ($job) {
                 return [
@@ -120,17 +123,17 @@ class JobsController extends Controller
                 ];
             });
 
-            // Check if the job exists
-            if (!$formattedJobs) {
+            // Check if any jobs were found
+            if ($formattedJobs->isEmpty()) {
                 return response()->json([
-                    'message' => 'Job not found!',
-                    'data' => null
+                    'message' => 'No jobs found matching the criteria.',
+                    'data' => []
                 ], 404); // Status code 404 for not found
             }
 
-            // If the job is found
+            // If jobs are found, return them
             return response()->json([
-                'message' => 'Job retrieved successfully!',
+                'message' => 'Jobs retrieved successfully!',
                 'data' => $formattedJobs
             ], 200); // Status code 200 for successful retrieval
 
@@ -141,8 +144,8 @@ class JobsController extends Controller
                 'error' => $e->getMessage()
             ], 500); // Status code 500 for server error
         }
-
     }
+
     public function addJob(Request $request)
     {
         // dd('Hi');
