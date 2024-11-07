@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\JobSubmission;
 
 use Illuminate\Http\Request;
+use App\Models\JobSubmission;
 
 class JobSubmissionController extends Controller
 {
@@ -37,7 +37,7 @@ class JobSubmissionController extends Controller
     public function getJobSubmissionByID($id)
     {
         try {
-            // Retrieve the job
+            // Retrieve the job submission
             $job = JobSubmission::find($id);
 
             // Check if the job submission exists

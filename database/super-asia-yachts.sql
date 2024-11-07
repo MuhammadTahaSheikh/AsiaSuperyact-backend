@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2024 at 12:30 PM
+-- Generation Time: Nov 06, 2024 at 08:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -48,6 +48,41 @@ CREATE TABLE `cache_locks` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `careers`
+--
+
+CREATE TABLE `careers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `companyName` varchar(255) NOT NULL,
+  `jobCategory` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `yachtSize` varchar(255) NOT NULL,
+  `yachtType` varchar(255) NOT NULL,
+  `duration` varchar(255) NOT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `offeredSalary` varchar(255) NOT NULL,
+  `expirationDate` datetime DEFAULT NULL,
+  `experience` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `qualification` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `requirements` text NOT NULL,
+  `keyPoints` text NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `careers`
+--
+
+INSERT INTO `careers` (`id`, `title`, `companyName`, `jobCategory`, `designation`, `yachtSize`, `yachtType`, `duration`, `location`, `offeredSalary`, `expirationDate`, `experience`, `gender`, `qualification`, `description`, `requirements`, `keyPoints`, `created_at`, `updated_at`) VALUES
+(1, 'First Job', '360synergytech', 'Deck', 'Bosun', '0-24m', 'Motor', 'Temporary (5 to 6 Months)', '160 Broadway, New York, NY 10038, USA', '45k-60k Yearly', '2024-11-06 00:53:36', '1 Year+', 'Male', 'STCW, ENG1, PBL2, Deck Rating', 'This is job description', 'This is job requirement', 'This is keypoint 1', '2024-11-06 14:41:25', '2024-11-06 09:46:36');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
@@ -77,6 +112,7 @@ CREATE TABLE `contact_us` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `phone` varchar(255) DEFAULT NULL,
   `subject` varchar(255) NOT NULL,
   `enquiry` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
@@ -87,12 +123,13 @@ CREATE TABLE `contact_us` (
 -- Dumping data for table `contact_us`
 --
 
-INSERT INTO `contact_us` (`id`, `name`, `email`, `subject`, `enquiry`, `created_at`, `updated_at`) VALUES
-(1, 'Moughees', 'moughees@360synergytech.com', 'First record', 'This is my first post api call using laravel', '2024-10-21 15:06:21', '2024-10-21 10:06:21'),
-(2, 'Taha', 'taha@360synergytech.com', 'First record', 'This is my first post api call using laravel', '2024-10-21 15:12:06', '2024-10-21 10:12:06'),
-(3, 'Hasan Sohail', 'hasan@360synergytech.com', 'First record', 'This is my first post api call using laravel', '2024-10-21 16:16:39', '2024-10-21 11:16:39'),
-(4, 'Ali', 'ali@360synergytech.com', 'First record', 'This is my first post api call using laravel', '2024-10-21 20:58:53', '2024-10-21 15:58:53'),
-(5, 'Ali', 'ali@360synergytech.com', 'First record', 'This is my first post api call using laravel', '2024-10-28 11:28:55', '2024-10-28 06:28:55');
+INSERT INTO `contact_us` (`id`, `name`, `email`, `phone`, `subject`, `enquiry`, `created_at`, `updated_at`) VALUES
+(1, 'Moughees', 'moughees@360synergytech.com', NULL, 'First record', 'This is my first post api call using laravel', '2024-10-21 15:06:21', '2024-10-21 10:06:21'),
+(2, 'Taha', 'taha@360synergytech.com', NULL, 'First record', 'This is my first post api call using laravel', '2024-10-21 15:12:06', '2024-10-21 10:12:06'),
+(3, 'Hasan Sohail', 'hasan@360synergytech.com', NULL, 'First record', 'This is my first post api call using laravel', '2024-10-21 16:16:39', '2024-10-21 11:16:39'),
+(4, 'Ali', 'ali@360synergytech.com', NULL, 'First record', 'This is my first post api call using laravel', '2024-10-21 20:58:53', '2024-10-21 15:58:53'),
+(5, 'Ali', 'ali@360synergytech.com', NULL, 'First record', 'This is my first post api call using laravel', '2024-10-28 11:28:55', '2024-10-28 06:28:55'),
+(6, 'Moughees', 'moughees@360synergytech.com', '+92-305-1234567', 'First record', 'This is my first post api call using laravel', '2024-10-29 11:38:40', '2024-10-29 06:38:40');
 
 -- --------------------------------------------------------
 
@@ -175,6 +212,29 @@ CREATE TABLE `job_batches` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `job_submissions`
+--
+
+CREATE TABLE `job_submissions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `resumeURL` text NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `job_submissions`
+--
+
+INSERT INTO `job_submissions` (`id`, `name`, `email`, `phone`, `resumeURL`, `created_at`, `updated_at`) VALUES
+(2, 'Tim David 123', 'tim123@email.com', '+18625913075', 'http://192.168.18.79:8000//assets/resume/1730912692_Assignment Contract.pdf', '2024-11-06 16:55:03', '2024-11-06 12:04:52');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -200,7 +260,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2024_10_23_141807_create_videos_table', 7),
 (10, '2024_10_21_164746_create_product_table', 8),
 (11, '2024_10_23_185149_add_category_id_foreign_key_to_products_table', 9),
-(12, '2024_10_24_131505_add_thumbnail_for_videos_table', 10);
+(12, '2024_10_24_131505_add_thumbnail_for_videos_table', 10),
+(13, '2024_11_04_115544_create_jobs_table', 11),
+(14, '2024_11_06_153208_create_job_submissions_table', 12);
 
 -- --------------------------------------------------------
 
@@ -231,12 +293,10 @@ CREATE TABLE `product` (
   `toysAndTendersDescription` text NOT NULL,
   `imageURL` text NOT NULL,
   `price` int(10) UNSIGNED NOT NULL,
-  `capacity` int(10) UNSIGNED NOT NULL,
-  `pictureSpots` int(10) UNSIGNED NOT NULL,
-  `bedrooms` int(10) UNSIGNED NOT NULL,
-  `repairDate` datetime DEFAULT NULL,
-  `ratioOfSpace` decimal(8,2) NOT NULL,
-  `perk` varchar(255) NOT NULL,
+  `guests` int(10) UNSIGNED NOT NULL,
+  `cabins` int(10) UNSIGNED NOT NULL,
+  `crew` int(10) UNSIGNED NOT NULL,
+  `year` int(10) NOT NULL,
   `length` varchar(255) DEFAULT NULL,
   `beam` varchar(255) DEFAULT NULL,
   `draft` varchar(255) DEFAULT NULL,
@@ -257,11 +317,12 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `title`, `categoryID`, `displayedDescription`, `exteriorDesignDescription`, `amenitiesDescription`, `interiorDesignDescription`, `toysAndTendersDescription`, `imageURL`, `price`, `capacity`, `pictureSpots`, `bedrooms`, `repairDate`, `ratioOfSpace`, `perk`, `length`, `beam`, `draft`, `cruisingSpeed`, `builder`, `navalArchitect`, `exteriorDesigner`, `interiorDesigner`, `hullMaterial`, `superstructureMaterial`, `grossTonnage`, `deckMaterial`, `created_at`, `updated_at`) VALUES
-(10, 'Prod1', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1729782715_ship1.png,http://192.168.18.79:8000/assets/images/product/1729782715_ship2.png,http://192.168.18.79:8000/assets/images/product/1729782715_ship3.png', 12345, 25, 2, 1, '2024-10-24 00:53:36', 10.50, 'Hello this is perk', 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-10-24 10:11:55', '2024-10-24 10:11:55'),
-(11, 'Prod2', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1729784110_ship1.png,http://192.168.18.79:8000/assets/images/product/1729784110_ship2.png,http://192.168.18.79:8000/assets/images/product/1729784110_ship3.png', 12345, 25, 2, 1, '2024-10-24 00:53:36', 10.50, 'Hello this is perk', 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-10-24 10:35:10', '2024-10-24 10:35:10'),
-(12, 'Prod3', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1729784290_ship1.png,http://192.168.18.79:8000/assets/images/product/1729784290_ship2.png,http://192.168.18.79:8000/assets/images/product/1729784290_ship3.png', 12345, 25, 2, 1, '2024-10-24 00:53:36', 10.50, 'Hello this is perk', 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-10-24 10:38:10', '2024-10-24 10:38:10'),
-(13, 'Prod4', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1729784312_ship1.png,http://192.168.18.79:8000/assets/images/product/1729784312_ship2.png,http://192.168.18.79:8000/assets/images/product/1729784312_ship3.png', 12345, 25, 2, 1, '2024-10-24 00:53:36', 10.50, 'Hello this is perk', 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-10-24 10:38:32', '2024-10-24 10:38:32');
+INSERT INTO `product` (`id`, `title`, `categoryID`, `displayedDescription`, `exteriorDesignDescription`, `amenitiesDescription`, `interiorDesignDescription`, `toysAndTendersDescription`, `imageURL`, `price`, `guests`, `cabins`, `crew`, `year`, `length`, `beam`, `draft`, `cruisingSpeed`, `builder`, `navalArchitect`, `exteriorDesigner`, `interiorDesigner`, `hullMaterial`, `superstructureMaterial`, `grossTonnage`, `deckMaterial`, `created_at`, `updated_at`) VALUES
+(10, 'Prod1', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1729782715_ship1.png,http://192.168.18.79:8000/assets/images/product/1729782715_ship2.png,http://192.168.18.79:8000/assets/images/product/1729782715_ship3.png', 12345, 25, 2, 1, 0, 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-10-24 10:11:55', '2024-10-24 10:11:55'),
+(11, 'Prod2', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1729784110_ship1.png,http://192.168.18.79:8000/assets/images/product/1729784110_ship2.png,http://192.168.18.79:8000/assets/images/product/1729784110_ship3.png', 12345, 25, 2, 1, 0, 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-10-24 10:35:10', '2024-10-24 10:35:10'),
+(12, 'Prod3', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1729784290_ship1.png,http://192.168.18.79:8000/assets/images/product/1729784290_ship2.png,http://192.168.18.79:8000/assets/images/product/1729784290_ship3.png', 12345, 25, 2, 1, 0, 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-10-24 10:38:10', '2024-10-24 10:38:10'),
+(13, 'Prod4', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1729784312_ship1.png,http://192.168.18.79:8000/assets/images/product/1729784312_ship2.png,http://192.168.18.79:8000/assets/images/product/1729784312_ship3.png', 12345, 25, 2, 1, 0, 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-10-24 10:38:32', '2024-10-24 10:38:32'),
+(14, 'Updated Prod', 7, 'Hello this is displayedDescription', 'Hello this is exteriorDesignDescription', 'Hello this is amenitiesDescription', 'Hello this is interiorDesignDescription', 'Hello this is toysAndTendersDescription', 'http://192.168.18.79:8000/assets/images/product/1730919740_burgermenu.png,http://192.168.18.79:8000/assets/images/product/1730919740_logo.png', 123, 20, 5, 3, 2022, 'Hello this is length', 'Hello this is beam', 'Hello this is draft', 'Hello this is cruisingSpeed', 'Hello this is builder', 'Hello this is navalArchitect', 'Hello this is exteriorDesigner', 'Hello this is interiorDesigner', 'Hello this is hullMaterial', 'Hello this is superstructureMaterial', 5, 'Hello this is deckMaterial', '2024-11-06 14:00:49', '2024-11-06 14:02:20');
 
 -- --------------------------------------------------------
 
@@ -349,6 +410,12 @@ ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
 
 --
+-- Indexes for table `careers`
+--
+ALTER TABLE `careers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -384,6 +451,12 @@ ALTER TABLE `jobs`
 -- Indexes for table `job_batches`
 --
 ALTER TABLE `job_batches`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `job_submissions`
+--
+ALTER TABLE `job_submissions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -437,6 +510,12 @@ ALTER TABLE `videos`
 --
 
 --
+-- AUTO_INCREMENT for table `careers`
+--
+ALTER TABLE `careers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -446,7 +525,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -467,16 +546,22 @@ ALTER TABLE `jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `job_submissions`
+--
+ALTER TABLE `job_submissions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `reach_outs`

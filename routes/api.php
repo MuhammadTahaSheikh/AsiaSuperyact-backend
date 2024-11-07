@@ -9,6 +9,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\JobCategoryController;
 use App\Http\Controllers\JobSubmissionController;
 
 /*
@@ -70,6 +71,14 @@ Route::post('/add-job', [JobsController::class, 'addJob']);
 Route::get('/job/{id}', [JobsController::class, 'getJobByID']);
 Route::delete('/delete-job/{id}', [JobsController::class, 'deleteJob']);
 Route::post('/edit-job/{id}', [JobsController::class, 'editJob']);
+
+// Routes for Job Category
+
+Route::get('/job-categories', [JobCategoryController::class, 'getAllJobCategories']);
+Route::post('/add-job-category', [JobCategoryController::class, 'addJobCategory']);
+Route::get('/job-category/{id}', [JobCategoryController::class, 'getJobCategoryByID']);
+Route::delete('/delete-job-category/{id}', [JobCategoryController::class, 'deleteJobCategory']);
+Route::post('/edit-job-category/{id}', [JobCategoryController::class, 'editJobCategory']);
 
 // Routes for Job Submission
 

@@ -20,10 +20,22 @@ class JobsController extends Controller
                     'data' => []
                 ], 200); // Status code 200 for no content
             }
-
+            // Transform jobs data to match the desired format
+            $formattedJobs = $jobs->map(function ($job) {
+                return [
+                    'title' => $job->title,  // Assuming 'title' is the job title
+                    'location' => $job->location, // Assuming 'location' contains location info
+                    'info' => [
+                        $job->duration ? $job->duration : 'No duration provided',
+                        $job->qualification ? "Qualifications: " . $job->qualification : 'No qualification provided',
+                        $job->experience ? "Experience: " . $job->experience . " Year(s)" : 'No experience provided',
+                        $job->yachtSize ? "Yacht Size: " . $job->yachtSize : 'No yacht size provided',
+                    ]
+                ];
+            });
             return response()->json([
                 'message' => 'Jobs retrieved successfully!',
-                'data' => $jobs
+                'data' => $formattedJobs
             ], 201); // Status code 201 for successful data retrieval
 
         } catch (\Exception $e) {
