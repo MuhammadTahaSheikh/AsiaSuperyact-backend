@@ -23,8 +23,9 @@ class JobsController extends Controller
             // Transform jobs data to match the desired format
             $formattedJobs = $jobs->map(function ($job) {
                 return [
-                    'title' => $job->title,  // Assuming 'title' is the job title
-                    'location' => $job->location, // Assuming 'location' contains location info
+                    'id' => $job->id,
+                    'title' => $job->title, 
+                    'location' => $job->location,
                     'info' => [
                         $job->duration ? $job->duration : 'No duration provided',
                         $job->qualification ? "Qualifications: " . $job->qualification : 'No qualification provided',

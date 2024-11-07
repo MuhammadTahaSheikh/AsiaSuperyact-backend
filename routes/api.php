@@ -10,6 +10,7 @@ use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\JobCategoryController;
+use App\Http\Controllers\JobDesignationController;
 use App\Http\Controllers\JobSubmissionController;
 
 /*
@@ -79,6 +80,14 @@ Route::post('/add-job-category', [JobCategoryController::class, 'addJobCategory'
 Route::get('/job-category/{id}', [JobCategoryController::class, 'getJobCategoryByID']);
 Route::delete('/delete-job-category/{id}', [JobCategoryController::class, 'deleteJobCategory']);
 Route::post('/edit-job-category/{id}', [JobCategoryController::class, 'editJobCategory']);
+
+// Routes for Job Designation
+
+Route::get('/job-designations', [JobDesignationController::class, 'getAllJobDesignations']);
+Route::post('/add-job-designation', [JobDesignationController::class, 'addJobDesignation']);
+Route::get('/job-designation/{id}', [JobDesignationController::class, 'getJobDesignationByID']);
+Route::delete('/delete-job-designation/{id}', [JobDesignationController::class, 'deleteJobDesignation']);
+Route::post('/edit-job-designation/{id}', [JobDesignationController::class, 'editJobDesignation']);
 
 // Routes for Job Submission
 
