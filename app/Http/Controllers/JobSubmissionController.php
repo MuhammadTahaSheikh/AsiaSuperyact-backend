@@ -48,7 +48,7 @@ class JobSubmissionController extends Controller
                 ], 404); // Status code 404 for not found
             }
 
-            // If the product is found
+            // If the job submission is found
             return response()->json([
                 'message' => 'Job submissions retrieved successfully!',
                 'data' => $job
@@ -206,7 +206,7 @@ class JobSubmissionController extends Controller
             ], 200); // 200 status code for success
 
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-            // Handle the case where the category is not found
+            // Handle the case where the job submission is not found
             return response()->json([
                 'message' => 'Job submission not found!',
                 'status' => 'error'

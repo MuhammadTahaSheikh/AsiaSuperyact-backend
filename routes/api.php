@@ -9,9 +9,10 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\JobsController;
-use App\Http\Controllers\JobCategoryController;
-use App\Http\Controllers\JobDesignationController;
+// use App\Http\Controllers\JobCategoryController;
+// use App\Http\Controllers\JobDesignationController;
 use App\Http\Controllers\JobSubmissionController;
+use App\Http\Controllers\RecruitingCrewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +98,14 @@ Route::post('/add-job-submission', [JobSubmissionController::class, 'addJobSubmi
 Route::get('/job-submission/{id}', [JobSubmissionController::class, 'getJobSubmissionByID']);
 Route::delete('/delete-job-submission/{id}', [JobSubmissionController::class, 'deleteJobSubmission']);
 Route::post('/edit-job-submission/{id}', [JobSubmissionController::class, 'editJobSubmission']);
+
+// Routes for Recruiting Crew
+
+Route::get('/crew', [RecruitingCrewController::class, 'getAllCrew']);
+Route::post('/add-crew', [RecruitingCrewController::class, 'addCrew']);
+Route::get('/crew/{id}', [RecruitingCrewController::class, 'getCrewByID']);
+Route::delete('/delete-crew/{id}', [RecruitingCrewController::class, 'deleteCrew']);
+Route::post('/edit-crew/{id}', [RecruitingCrewController::class, 'editCrew']);
 
 // Routes for Contact Us form
 
