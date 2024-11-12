@@ -45,7 +45,8 @@ class Product extends Model
         'hullMaterial',
         'superstructureMaterial',
         'grossTonnage',
-        'deckMaterial'
+        'deckMaterial',
+        'hotProduct' => 0,
     ];
     public function category()
 {

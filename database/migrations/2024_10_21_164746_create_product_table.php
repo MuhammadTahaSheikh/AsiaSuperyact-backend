@@ -47,7 +47,8 @@ return new class extends Migration {
             $table->string('hullMaterial')->nullable(); // Hull material, e.g., "Steel"
             $table->string('superstructureMaterial')->nullable(); // Superstructure material, e.g., "Aluminium"
             $table->unsignedInteger('grossTonnage')->nullable(); // Gross tonnage, e.g., "2310"
-            $table->string('deckMaterial')->nullable(); // Deck material, e.g., "Teak"
+            $table->string('deckMaterial')->nullable(); // Deck material, e.g., "Teak"            
+            $table->boolean('hotProduct')->default(0);
             $table->timestamps();
 
         });

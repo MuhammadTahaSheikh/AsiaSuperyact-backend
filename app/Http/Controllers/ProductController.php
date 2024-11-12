@@ -34,6 +34,33 @@ class ProductController extends Controller
             ], 500); // Status code 500 for server error
         }
     }
+    public function getHotProducts()
+    {
+        try {
+            // Retrieve hot products and order by id in descending order
+            $products = Product::where('hotProduct', 1)->take(3)->get();
+
+            // Check if the products collection is empty
+            if ($products->isEmpty()) {
+                return response()->json([
+                    'message' => 'No record found!',
+                    'data' => []
+                ], 200); // Status code 200 for no content
+            }
+
+            return response()->json([
+                'message' => 'Hot products retrieved successfully!',
+                'data' => $products
+            ], 201); // Status code 201 for successful data retrieval
+
+        } catch (\Exception $e) {
+            // Handle any errors
+            return response()->json([
+                'message' => 'Something went wrong!',
+                'error' => $e->getMessage()
+            ], 500); // Status code 500 for server error
+        }
+    }
     public function getProductByID($id)
     {
         try {
@@ -133,6 +160,7 @@ class ProductController extends Controller
                 'superstructureMaterial' => 'nullable|string|max:255',
                 'grossTonnage' => 'nullable|integer',
                 'deckMaterial' => 'nullable|string|max:255',
+                'hotProduct' => 'boolean',
             ]);
 
             // Handle the image upload if provided
@@ -186,6 +214,7 @@ class ProductController extends Controller
                 'superstructureMaterial' => $validatedData['superstructureMaterial'],
                 'grossTonnage' => $validatedData['grossTonnage'],
                 'deckMaterial' => $validatedData['deckMaterial'],
+                'hotProduct' => $validatedData['hotProduct'],
             ]);
 
             // Return a success response
@@ -250,6 +279,7 @@ class ProductController extends Controller
                 'superstructureMaterial' => 'nullable|string|max:255',
                 'grossTonnage' => 'nullable|integer',
                 'deckMaterial' => 'nullable|string|max:255',
+                'hotProduct' => 'boolean',
             ]);
 
 
@@ -304,6 +334,7 @@ class ProductController extends Controller
                 'superstructureMaterial' => $validatedData['superstructureMaterial'],
                 'grossTonnage' => $validatedData['grossTonnage'],
                 'deckMaterial' => $validatedData['deckMaterial'],
+                'hotProduct' => $validatedData['hotProduct'],
             ]);
 
             // Return a success response
@@ -327,7 +358,6 @@ class ProductController extends Controller
             ], 500); // Status code 500 for server error
         }
     }
-
     public function deleteProduct($id)
     {
         try {

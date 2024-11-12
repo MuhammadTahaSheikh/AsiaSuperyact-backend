@@ -60,6 +60,7 @@ Route::delete('/delete-video/{id}', [VideoController::class, 'deleteVideo']);
 // Routes for Products
 
 Route::get('/products', [ProductController::class, 'getAllProducts']);
+Route::get('/hot-products', [ProductController::class, 'getHotProducts']);
 Route::post('/add-product', [ProductController::class, 'addProduct']);
 Route::get('/product/{id}', [ProductController::class, 'getProductByID']);
 Route::get('/product/category/{id}', [ProductController::class, 'getProductByCategoryID']);
