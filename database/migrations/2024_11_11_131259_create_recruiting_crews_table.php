@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('recruiting_crews', function (Blueprint $table) {
             $table->id();
-            $table->text('positions');
-            $table->text('skills');
+            $table->longText('positions');
+            $table->longText('skills');
             $table->string('yachtType');
             $table->string('yachtOperation');
             $table->string('yachtName');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('yourEmail');
             $table->string('yourPhone');
             $table->string('yourLocation')->nullable();
-            $table->text('yourMessage')->nullable();
+            $table->longText('yourMessage')->nullable();
             $table->boolean('newsUpdation')->default(false);
             $table->boolean('acceptPrivacyPolicy')->default(false);
             $table->timestamps();

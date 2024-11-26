@@ -145,7 +145,7 @@ class ProductController extends Controller
                 'price' => 'required|integer',
                 'guests' => 'required|integer',
                 'cabins' => 'required|integer',
-                'crew' => 'required|integer',
+                'crew' => 'nullable|integer',
                 'year' => 'required|integer',
 
                 'length' => 'nullable|string|max:255',
@@ -389,5 +389,4 @@ class ProductController extends Controller
             ], 500); // 500 status code for server error
         }
     }
-
 }

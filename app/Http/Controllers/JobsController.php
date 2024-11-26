@@ -25,13 +25,23 @@ class JobsController extends Controller
                 return [
                     'id' => $job->id,
                     'title' => $job->title,
-                    'location' => $job->location,
+                    'companyName' => $job->companyName,
+                    'designation' => $job->designation,
                     'info' => [
-                        $job->duration ? $job->duration : 'No duration provided',
+                        $job->duration ?: 'No duration provided',
                         $job->qualification ? "Qualifications: " . $job->qualification : 'No qualification provided',
                         $job->experience ? "Experience: " . $job->experience . " Year(s)" : 'No experience provided',
-                        $job->yachtSize ? "Yacht Size: " . $job->yachtSize : 'No yacht size provided',
-                    ]
+                        $job->yachtSize ? "YachtSize: " . $job->yachtSize : 'No yacht size provided',
+                    ],
+                    'yachtType' => $job->yachtType,
+                    'location' => $job->location,
+                    'offeredSalary' => $job->offeredSalary,
+                    'expirationDate' => $job->expirationDate,
+                    'gender' => $job->gender,
+                    'description' => $job->description,
+                    'requirements' => $job->requirements,
+                    'created_at' => $job->created_at,
+                    'updated_at' => $job->updated_at
                 ];
             });
             return response()->json([
@@ -50,7 +60,7 @@ class JobsController extends Controller
     public function getJobByID($id)
     {
         try {
-            // Retrieve the job
+            // Retrieve the job by ID
             $job = Jobs::find($id);
 
             // Check if the job exists
@@ -61,20 +71,41 @@ class JobsController extends Controller
                 ], 404); // Status code 404 for not found
             }
 
-            // If the job is found
+            // Format job data to match the desired structure
+            $formattedJob = [
+                'id' => $job->id,
+                'title' => $job->title,
+                'companyName' => $job->companyName,
+                'designation' => $job->designation,
+                'info' => [
+                    $job->duration ?: 'No duration provided',
+                    $job->qualification ? "Qualifications: " . $job->qualification : 'No qualification provided',
+                    $job->experience ? "Experience: " . $job->experience . " Year(s)" : 'No experience provided',
+                    $job->yachtSize ? "YachtSize: " . $job->yachtSize : 'No yacht size provided',
+                ],
+                'yachtType' => $job->yachtType,
+                'location' => $job->location,
+                'offeredSalary' => $job->offeredSalary,
+                'expirationDate' => $job->expirationDate,
+                'gender' => $job->gender,
+                'description' => $job->description,
+                'requirements' => $job->requirements,
+                'created_at' => $job->created_at,
+                'updated_at' => $job->updated_at
+            ];
+
             return response()->json([
                 'message' => 'Job retrieved successfully!',
-                'data' => $job
-            ], 200); // Status code 200 for successful retrieval
+                'data' => $formattedJob
+            ], 200); // Status code 200 for successful data retrieval
 
         } catch (\Exception $e) {
-            // Handle any errors
+            // Handle any errors without exposing sensitive details in production
             return response()->json([
                 'message' => 'Something went wrong!',
-                'error' => $e->getMessage()
+                'error' => config('app.debug') ? $e->getMessage() : 'Please try again later.'
             ], 500); // Status code 500 for server error
         }
-
     }
     public function getJobsBySearch(Request $request)
     {
@@ -118,7 +149,7 @@ class JobsController extends Controller
                         $job->duration ? $job->duration : 'No duration provided',
                         $job->qualification ? "Qualifications: " . $job->qualification : 'No qualification provided',
                         $job->experience ? "Experience: " . $job->experience . " Year(s)" : 'No experience provided',
-                        $job->yachtSize ? "Yacht Size: " . $job->yachtSize : 'No yacht size provided',
+                        $job->yachtSize ? "YachtSize: " . $job->yachtSize : 'No yacht size provided',
                     ]
                 ];
             });
@@ -145,7 +176,6 @@ class JobsController extends Controller
             ], 500); // Status code 500 for server error
         }
     }
-
     public function addJob(Request $request)
     {
         // dd('Hi');
@@ -154,7 +184,7 @@ class JobsController extends Controller
             $validatedData = $request->validate([
                 'title' => 'required|string|max:255',
                 'companyName' => 'required|string|max:255',
-                'jobCategory' => 'required|string|max:255',
+                // 'jobCategory' => 'nullable|string|max:255',
                 'designation' => 'required|string|max:255',
                 'yachtSize' => 'required|string|max:255',
                 'yachtType' => 'required|string|max:255',
@@ -167,14 +197,13 @@ class JobsController extends Controller
                 'qualification' => 'required|string|max:255',
                 'description' => 'required|string',
                 'requirements' => 'required|string',
-                'keyPoints' => 'required|string',
             ]);
 
             // Create a new job using the validated data
             $job = Jobs::create([
                 'title' => $validatedData['title'],
                 'companyName' => $validatedData['companyName'],
-                'jobCategory' => $validatedData['jobCategory'],
+                // 'jobCategory' => $validatedData['jobCategory'],
                 'designation' => $validatedData['designation'],
                 'yachtSize' => $validatedData['yachtSize'],
                 'yachtType' => $validatedData['yachtType'],
@@ -187,7 +216,6 @@ class JobsController extends Controller
                 'qualification' => $validatedData['qualification'],
                 'description' => $validatedData['description'],
                 'requirements' => $validatedData['requirements'],
-                'keyPoints' => $validatedData['keyPoints'],
             ]);
 
             // Return a success response
@@ -218,7 +246,7 @@ class JobsController extends Controller
             $validatedData = $request->validate([
                 'title' => 'required|string|max:255',
                 'companyName' => 'required|string|max:255',
-                'jobCategory' => 'required|string|max:255',
+                // 'jobCategory' => 'required|string|max:255',
                 'designation' => 'required|string|max:255',
                 'yachtSize' => 'required|string|max:255',
                 'yachtType' => 'required|string|max:255',
@@ -231,13 +259,12 @@ class JobsController extends Controller
                 'qualification' => 'required|string|max:255',
                 'description' => 'required|string',
                 'requirements' => 'required|string',
-                'keyPoints' => 'required|string',
             ]);
             $job = Jobs::findOrFail($id);
             $job->update([
                 'title' => $validatedData['title'],
                 'companyName' => $validatedData['companyName'],
-                'jobCategory' => $validatedData['jobCategory'],
+                // 'jobCategory' => $validatedData['jobCategory'],
                 'designation' => $validatedData['designation'],
                 'yachtSize' => $validatedData['yachtSize'],
                 'yachtType' => $validatedData['yachtType'],
@@ -250,7 +277,6 @@ class JobsController extends Controller
                 'qualification' => $validatedData['qualification'],
                 'description' => $validatedData['description'],
                 'requirements' => $validatedData['requirements'],
-                'keyPoints' => $validatedData['keyPoints'],
             ]);
 
             // Return a success response

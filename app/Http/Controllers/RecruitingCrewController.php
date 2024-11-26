@@ -68,8 +68,8 @@ class RecruitingCrewController extends Controller
         try {
             // Validate the incoming request data
             $validatedData = $request->validate([
-                'positions' => 'required|string|max:255',
-                'skills' => 'required|string|max:255',
+                'positions' => 'required|string',
+                'skills' => 'required|string',
                 'yachtType' => 'required|string|max:255',
                 'yachtOperation' => 'required|string|max:255',
                 'yachtName' => 'required|string|max:255',
@@ -86,7 +86,6 @@ class RecruitingCrewController extends Controller
                 'newsUpdation' => 'boolean',
                 'acceptPrivacyPolicy' => 'boolean',
             ]);
-
             $crews = RecruitingCrew::create([
                 'positions' => $validatedData['positions'],
                 'skills' => $validatedData['skills'],
@@ -133,8 +132,8 @@ class RecruitingCrewController extends Controller
         try {
             // Validate the incoming request data
             $validatedData = $request->validate([
-                'positions' => 'required|string|max:255',
-                'skills' => 'required|string|max:255',
+                'positions' => 'required|string',
+                'skills' => 'required|string',
                 'yachtType' => 'required|string|max:255',
                 'yachtOperation' => 'required|string|max:255',
                 'yachtName' => 'required|string|max:255',

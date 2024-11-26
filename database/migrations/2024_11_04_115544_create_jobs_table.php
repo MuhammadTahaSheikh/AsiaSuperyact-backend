@@ -26,9 +26,8 @@ return new class extends Migration
             $table->string('experience');
             $table->string('gender');
             $table->string('qualification');
-            $table->text('description');
-            $table->text('requirements');
-            $table->text('keyPoints');
+            $table->longText('description');
+            $table->longText('requirements');
             $table->timestamps();
         });
     }
