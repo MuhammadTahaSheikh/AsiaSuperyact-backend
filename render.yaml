@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: asia-super-yachts-api
+    env: php
+    plan: free
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      php artisan key:generate --force
+      php artisan migrate --force
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: asia-super-yachts-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: asia-super-yachts-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: asia-super-yachts-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: asia-super-yachts-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: asia-super-yachts-db
+          property: password
+
+databases:
+  - name: asia-super-yachts-db
+    plan: free
