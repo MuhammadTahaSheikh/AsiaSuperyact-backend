@@ -1,66 +1,193 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Asia Super Yachts API Backend
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive Laravel API backend for Asia Super Yachts - managing yacht sales, luxury properties, crew recruitment, and more.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Yacht Management** - List, create, and manage luxury yachts
+- **Property Listings** - Waterfront properties and luxury real estate
+- **Crew Recruitment** - Job postings and crew member applications
+- **Gallery System** - Image and video management
+- **Contact Management** - Lead generation and customer inquiries
+- **RESTful API** - Clean, well-documented API endpoints
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Framework:** Laravel 10
+- **PHP Version:** 8.4+
+- **Database:** MySQL/PostgreSQL
+- **Authentication:** Laravel Sanctum
+- **API:** RESTful API with JSON responses
 
-## Learning Laravel
+## 📋 Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP 8.1 or higher
+- Composer
+- MySQL/PostgreSQL
+- Git
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Quick Start
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Local Development
 
-## Laravel Sponsors
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/asiasuperyachts-backend.git
+   cd asiasuperyachts-backend
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. **Install dependencies:**
+   ```bash
+   composer install
+   ```
 
-### Premium Partners
+3. **Environment setup:**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. **Database setup:**
+   ```bash
+   # For MySQL
+   mysql -u root -p < database/super-asia-yachts.sql
+   
+   # For PostgreSQL
+   psql -U postgres -d asiasuperyachts < database/super-asia-yachts-postgresql.sql
+   ```
 
-## Contributing
+5. **Run migrations:**
+   ```bash
+   php artisan migrate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Start the server:**
+   ```bash
+   php artisan serve
+   ```
 
-## Code of Conduct
+Your API will be available at `http://localhost:8000`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🌐 Deployment
 
-## Security Vulnerabilities
+### Deploy to Render (Recommended)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **Run the deployment script:**
+   ```bash
+   ./deploy-to-render.sh
+   ```
 
-## License
+2. **Follow the detailed guide:** [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Deploy to Hostinger
+
+1. Upload files via FTP/File Manager
+2. Set document root to `public` folder
+3. Import database using provided SQL files
+4. Update environment variables
+
+## 📊 Database Schema
+
+The application includes the following main entities:
+
+- **Categories** - Product categories
+- **Products** - Yachts and services
+- **Properties** - Real estate listings
+- **Jobs** - Job postings
+- **Job Submissions** - Job applications
+- **Recruiting Crews** - Crew member applications
+- **Galleries** - Image galleries
+- **Videos** - Video content
+- **Reach Outs** - Contact inquiries
+
+## 🔧 API Endpoints
+
+### Yachts & Products
+- `GET /api/products` - List all products
+- `POST /api/products` - Create new product
+- `GET /api/products/{id}` - Get specific product
+- `PUT /api/products/{id}` - Update product
+- `DELETE /api/products/{id}` - Delete product
+
+### Properties
+- `GET /api/properties` - List all properties
+- `POST /api/properties` - Create new property
+- `GET /api/properties/{id}` - Get specific property
+
+### Jobs & Recruitment
+- `GET /api/jobs` - List all job postings
+- `POST /api/jobs` - Create new job posting
+- `POST /api/job-submissions` - Submit job application
+- `POST /api/recruiting-crews` - Submit crew application
+
+### Media
+- `GET /api/galleries` - List all gallery images
+- `GET /api/videos` - List all videos
+
+### Contact
+- `POST /api/reach-outs` - Submit contact form
+
+## 📁 Project Structure
+
+```
+asiasuperyachts-backend/
+├── app/
+│   ├── Http/Controllers/     # API Controllers
+│   └── Models/              # Eloquent Models
+├── database/
+│   ├── migrations/          # Database migrations
+│   ├── super-asia-yachts.sql           # MySQL database
+│   └── super-asia-yachts-postgresql.sql # PostgreSQL database
+├── public/
+│   └── assets/             # Static assets (images, videos)
+├── routes/
+│   └── api.php            # API routes
+├── render.yaml            # Render deployment config
+├── deploy-to-render.sh    # Deployment script
+└── RENDER_DEPLOYMENT.md   # Detailed deployment guide
+```
+
+## 🔐 Environment Variables
+
+```env
+APP_NAME="Asia Super Yachts API"
+APP_ENV=production
+APP_KEY=your-app-key
+APP_DEBUG=false
+APP_URL=https://your-domain.com
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=asiasuperyachts
+DB_USERNAME=your-username
+DB_PASSWORD=your-password
+
+LOG_CHANNEL=stderr
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
+
+For support, email support@asiasuperyachts.com or create an issue in this repository.
+
+## 🚀 Deployment Status
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+---
+
+**Asia Super Yachts** - Luxury Yachts, Properties & Crew Services
