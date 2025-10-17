@@ -3,20 +3,17 @@ services:
     name: asia-super-yachts-api
     env: php
     plan: free
-    buildCommand: |
-      composer install --no-dev --optimize-autoloader
-      php artisan key:generate --force
-      php artisan migrate --force
+    buildCommand: composer install --no-dev --optimize-autoloader
     startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: false
-      - key: LOG_CHANNEL
-        value: stderr
+      - key: LOG_LEVEL
+        value: error
       - key: DB_CONNECTION
-        value: pgsql
+        value: mysql
       - key: DB_HOST
         fromDatabase:
           name: asia-super-yachts-db
@@ -37,6 +34,7 @@ services:
         fromDatabase:
           name: asia-super-yachts-db
           property: password
+    healthCheckPath: /api/categories
 
 databases:
   - name: asia-super-yachts-db
