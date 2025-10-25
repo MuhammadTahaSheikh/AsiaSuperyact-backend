@@ -1,0 +1,256 @@
+.crew_back {
+    /* background: url("../../Assets/Crew/crew_back.png"); */
+    background: url("../../Assets/Crew/Page\ Header\ BG\ 3-min.png");
+    width: 100%;
+    height: 258px;
+    background-position: center;
+  }
+  .job-search {
+    text-align: center;
+  }
+  .filter input, .filter button {
+    margin: 5px;
+  }
+ 
+ 
+ 
+
+
+
+  .main_job_search{
+    background-color: #023496;
+ 
+height: 157.98px;
+top: 734px;
+gap: 0px;
+
+  }
+
+  .job_search_css{
+    color: #FFFFFF;
+  font-size: 14px;
+padding-top: 2rem;
+  }
+  .search_crew{
+    background: #4E91FF;
+    border-top: 1px solid  #499CE4;
+    width: Fixed (173.2px)px;
+height: Hug (41px)px;
+top: 33.18px;
+left: 764.81px;
+padding: 9px 53.78px 9px 53.78px;
+gap: 0px;
+border-radius: 5px;
+border: none;
+color: #FFFFFF;
+  }
+  .input_crew{
+    width: 173.2px;
+height: 39px;
+top: 33.18px;
+left: 8px;
+margin: 3px;
+gap: 0px;
+border: none;
+border-radius: 5px;
+border: none;
+background: var(--color-white-solid, #FFFFFF);
+border-top: 1px solid var(--color-white-solid, #FFFFFF)
+
+  }
+
+.main-container {
+    max-width: 940px;
+    margin: 0 auto;
+}
+.page-info {
+    margin-top: 75px;
+    margin-bottom: 42px;
+}
+.page-heading {
+    font-size: 48px;
+    color: #023496;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.page-paragraph {
+    font-size: 16px;
+    line-height: 24px;
+    color: #023496;
+    font-weight: 400;
+    text-align: center;
+    width: 90ch;
+    margin: 0 auto;
+}
+.page-search {
+    background-color: #023496;
+    padding: 30px 0px;
+}
+.page-search p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #fff;
+    margin-bottom: 16px;
+}
+.page-search-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.page-search input {
+    width: 18.3%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+}
+.page-search-input button {
+    padding: 9px 56px;
+    background-color: #4E91FF;
+    font-size: 16px;
+    line-height: 23px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+}
+.border-radius {
+    border-radius: 0px !important;
+}
+.job-board {
+    margin: 42px 0px 148px 0px;
+}
+.job-board h1 {
+    color: #333333;
+    font-size: 16px;
+    line-height: 19.2px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.job-board span {
+    color: #499CE4;
+}
+.job {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #BCBCBC;
+    margin-left: 19px;
+}
+.job h3 {
+    color: #499CE4;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.6%;
+    margin-bottom: 8px;
+}
+.job p {
+    color: #555555;
+    font-size: 12px;
+    letter-spacing: 0.6%;
+    line-height: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.job ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Space between items */
+    padding: 0;
+    margin-left: 19px;
+    row-gap: 0px;
+}
+.job li {
+    color: #9DA2A5;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 400;
+    white-space: nowrap;
+    position: relative;
+}
+.job li:not(:last-child)::after {
+    content: "|";
+    margin-left: 8px;
+    color: #9DA2A5;
+}
+.job li:last-child {
+    flex-basis: 100%;
+    margin-top: 8px;
+}
+.job {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #BCBCBC;
+    margin-left: 19px;
+  }
+  .button-parent {
+    width: auto;
+  }
+  .job button {
+    padding: 10px 35px;
+    background-color: #fff;
+    color: #499CE4;
+    font-weight: 600;
+    border: 1px solid #499CE4;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+@media (max-width: 1024px) {
+    .page-info {
+        padding: 0 30px;
+    }
+    .page-paragraph {
+        width: 80%;
+    }
+    .page-search-input {
+        flex-direction: column;
+    }
+    .page-search input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .page-search {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .job-board {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .job {
+        flex-direction: column;
+      }
+      .button-parent {
+        width: 100%;
+      }
+      .job button {
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+        margin-top: 24px;
+      }
+      .job ul {
+        row-gap: 4px;
+    }
+}
+@media (max-width: 616px) {
+    .job ul {
+        row-gap: 0px !important;
+    }
+    .job li {
+        margin-top: 0px !important;
+    }
+}
+  @media screen and (max-width:768px) {
+    .main_job_search{
+    height: 100%;
+  }
+}

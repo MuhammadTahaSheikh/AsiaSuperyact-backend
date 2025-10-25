@@ -1,0 +1,144 @@
+/* Styles for the popup */
+.popup-content {
+  padding: 0px;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+  width: 100%;
+  max-height: 100vh; /* Set the maximum height */
+  overflow: hidden; /* Hide overflow of the content if it exceeds the height */
+}
+.load_more_btn_pop {
+  margin-top: 1rem;
+  width: 175.11px;
+  height: 40px;
+  gap: 0px;
+  border-radius: 5px;
+  border: 1px;
+  /* opacity: 0px; */
+  border: 1px solid #002356;
+  color: #002356;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.load_more_btn_pop_main {
+  text-align: center;
+}
+.popup-overlay {
+  background-color: #ffffff !important;
+}
+
+.popup-scrollable-content {
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-right: 0px;
+}
+
+.popup-scrollable-content::-webkit-scrollbar {
+  display: none; 
+}
+
+.popup-scrollable-content {
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* For Internet Explorer */
+.popup-scrollable-content {
+  -ms-overflow-style: none; /* Hide scrollbar */
+}
+
+/* .show-more-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+} */
+
+.close {
+  width: 4rem;
+  height: 3rem;
+}
+
+.show-more-pictures {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.back_img_button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rem;
+  margin-bottom: 1rem;
+}
+.pictures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 15rem;
+  margin-top: 3rem;
+}
+.enq_modal_btn {
+  width: 162.44px;
+  height: 52.08px;
+  top: 78px;
+  left: 1528px;
+  padding: 18.61px;
+  gap: 0px;
+  border-radius: 5.47px;
+  border: none;
+  /* opacity: 0px; */
+  background: #4e91ff;
+
+  font-family: Inter;
+  font-size: 13.13px;
+  font-weight: 400;
+  line-height: 13.13px;
+  letter-spacing: 2.188905715942383px;
+  text-align: center;
+  color: #ffffff;
+}
+.image-group.big {
+  width: 100%;
+}
+
+.image-group.small {
+  width: 48%;
+}
+
+.img_css {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2%;
+}
+.image-group {
+  display: inline-block; /* Allows images to sit next to each other */
+  margin: 3px; /* Add some space between images */
+}
+
+.image-group.big img {
+  width: 100%;
+  height: 100%;
+  /* height: 513px; */
+}
+
+.image-group.small img {
+  width: 100%;
+  height: 300px;
+}
+@media screen and (max-width: 768px) {
+  .image-group.small img {
+    width: 100%;
+    height: 100%;
+  }
+  .image-group.big img {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,231 @@
+.about_back {
+    /* background: url("../../../Assets/Catalog/back.png"); */
+    background: url("../../../Assets/Catalog/Page\ Header\ BG\ 1-min.png");
+    width: 100%;
+    height: 258px;
+    background-position: center;
+  }
+  .box-image {
+    width: 100%;
+    height: auto;
+  }
+  .loading-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .abc .abcd {
+    height: 300px !important;
+    object-fit: cover;
+    width: 100%;
+  }
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .subHead_home {
+    font-family: Red Hat Display;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28.8px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .subHead_about {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28.8px;
+    text-align: left;
+    color: #ff5e15;
+    text-decoration: underline;
+  }
+  .arrow_sub {
+    font-family: Font Awesome 5 Free;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 28.8px;
+    text-align: center;
+    color: #ffffff;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+  .capity_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    .capity_row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+      }
+  }
+  .catalog_nav_head {
+    font-family: Roboto;
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 55.2px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .container {
+    padding: 20px;
+  }
+  
+  .row_data {
+    display: flex;
+    flex-wrap: wrap; /* Allow boxes to wrap */
+    justify-content: start; /* Space between boxes */
+    margin-top: 3rem;
+  }
+  
+  .col_data {
+    flex: 0 1 calc(33.333% - 20px); /* Three boxes in a row */
+    margin-bottom: 20px; /* Space between rows */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+    width: 100%;
+    margin-left: 15px;
+  }
+  
+  .box_catalog {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 7% !important;
+    margin-left: 15%;
+  }
+  .box_catalog-image {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .box_catalog-content {
+    padding: 15px 30px 15px 30px;
+    background-color: #002356;
+  }
+  
+  .button-container {
+    margin-top: 40px;
+  
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .btn {
+    margin: 5px;
+  }
+  .catlog_title {
+    font-family: Kepler Std;
+    font-size: 19.7px;
+    font-weight: 700;
+    line-height: 13.13px;
+    letter-spacing: 2.101349353790283px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    margin-top: 0.9rem;
+  }
+  .catalog_price_data {
+    font-family: Roboto;
+    font-size: 13.13px;
+    font-weight: 700;
+    line-height: 13.67px;
+    letter-spacing: 2.713252544403076px;
+    text-align: left;
+    color: #00fff2;
+    padding-top: 3px;
+    
+  }
+  .catalog_price {
+    font-family: Roboto;
+    font-size: 10.94px;
+    font-weight: 400;
+    line-height: 14.28px;
+    letter-spacing: 1.6279516220092773px;
+    text-align: left;
+    color: #ffffff;
+    display: grid;
+  }
+  .catalog_price_head {
+    flex: 1;
+  }
+  .buy_catalog {
+    width: 150.89px;
+    height: 52.08px;
+    top: 494.69px;
+    left: 48.16px;
+    /* padding: 18.61px 44.65px 18.15px 44.87px; */
+    gap: 0px;
+    border-radius: 5.47px;
+    border: none;
+  }
+  .learn_catalog {
+    width: 150.44px;
+    height: 52.08px;
+    top: 494.69px;
+    left: 248.8px;
+    /* padding: 18.61px 44.65px 18.15px 44.87px; */
+    gap: 0px;
+    border-radius: 5.47px;
+    border: none;
+    background: #4E91FF;
+    color: #ffffff;
+  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .col_data {
+      flex: 0 1 calc(50% - 10px); /* Two boxes in a row on medium screens */
+    }
+    .button-container {
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .col_data {
+      flex: 0 1 100%; /* One box in a row on small screens */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .catalog_nav_head {
+      font-size: 26px;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    .container {
+      max-width: 1260px !important;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    .row_data {
+      justify-content: space-evenly;
+    }
+    .button-container {
+      gap: 10px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .row_data {
+      justify-content: center;
+    }
+  }
+  

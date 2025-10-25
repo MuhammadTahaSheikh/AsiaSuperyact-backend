@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/kepler-std-3");
+.reach_background {
+  background: url("../../Assets/Reach/reachBack.png");
+  width: 100%;
+  height: 570.23px;
+  top: 5690px;
+  gap: 0px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-up {
+  animation: slideInUp 1.9s forwards;
+}
+
+.reach-container {
+  max-width: 1950px;
+  margin: 0 auto;
+  width: 100%;
+}
+.reach {
+  color: #ffffff;
+  font-family: Kepler Std;
+  font-size: 40.69px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 49.26px;
+  letter-spacing: 4.398430824279785px;
+  text-align: center;
+}
+.call_reach {
+  font-family: Roboto;
+  font-size: 20.14px;
+  font-weight: 400;
+  line-height: 29.46px;
+  letter-spacing: 2.6390585899353027px;
+  text-align: center;
+  color: #ffffff;
+}
+.mail_reach {
+  font-family: Roboto;
+  font-size: 20.14px;
+  font-weight: 400;
+  line-height: 29.46px;
+  letter-spacing: 2.6390585899353027px;
+  text-align: center;
+  color: #ffffff;
+}
+.location_reach {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 20.14px;
+  font-weight: 400;
+  line-height: 29.46px;
+  letter-spacing: 2.6390585899353027px;
+  text-align: center;
+}
+.icon_reach {
+  color: #ffffff;
+  position: relative;
+  bottom: 3px;
+  right: 10px;
+}
+.all_content {
+  float: inline-end;
+  position: relative;
+  top: 170px;
+}
+@media screen and (max-width: 425px) {
+  .reach {
+    font-size: 26.69px;
+    line-height: 49.26px;
+    text-align: center;
+  }
+  .location_reach {
+    font-size: 14.14px;
+    line-height: 29.46px;
+    text-align: center;
+  }
+  .mail_reach {
+    font-size: 14.14px;
+  }
+  .call_reach {
+    font-size: 14.14px;
+  }
+}

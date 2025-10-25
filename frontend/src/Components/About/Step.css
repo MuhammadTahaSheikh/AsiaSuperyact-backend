@@ -1,0 +1,18 @@
+.step_heading {
+  font-family: Kepler Std;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 62px;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #002356;
+}
+.check {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .step_heading {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}

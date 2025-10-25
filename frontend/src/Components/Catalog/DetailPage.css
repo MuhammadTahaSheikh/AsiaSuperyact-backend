@@ -1,0 +1,140 @@
+.key_specification_back{
+    background: #F4F5F5;
+    width: 356px;
+    height: 462px;
+    top: 78px;
+    gap: 0px;
+  
+    
+}
+.link_css{
+  cursor: pointer;
+}
+.asking_detail{
+  color: #333333;
+  font-family: Roboto;
+font-size: 29.75px;
+font-weight: 300;
+line-height: 38px;
+letter-spacing: 0.2800000011920929px;
+text-align: left;
+
+}
+.asking_detail_head{
+  font-family: Kepler Std;
+font-size: 40px;
+font-weight: 700;
+line-height: 56px;
+letter-spacing: 3px;
+text-align: left;
+color: #023496;
+}
+.accordian_border{
+  
+    border-top: 1px solid #E0E0E0 !important;
+}
+.accordian_bg{
+    background-color: transparent !important;
+    
+}
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .full-image img {
+    width: 100%; /* Adjust to desired width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .thumbnail-images {
+    display: flex; /* Display thumbnails in a row */
+    justify-content: space-between; /* Space them out */
+    width: 100%; /* Adjust as necessary */
+    /* max-width: 600px;  */
+    margin-top: 10px; /* Space between full image and thumbnails */
+  }
+  
+  .thumbnail-images img {
+    width: 48%; /* Adjust thumbnail width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .product-detail-card {
+    background-color: #F7F7F7;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.specification {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.spec-label {
+    font-size: 14px;
+    color: #666;
+}
+.spec-value {
+    font-size: 14px;
+    color: #333;
+}
+.enquire-button {
+    background-color: #4285F4;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.enquire-button:hover {
+    background-color: #357AE8;
+}
+.yacht-details-container {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .yacht-details-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .yacht-details-container p {
+    color: #555;
+    margin-bottom: 15px;
+  }
+  .specifications {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #EAEAEA;
+  }
+  .spec-row span {
+    color: #333;
+    font-weight: 500;
+  }
+  .spec-row span:last-child {
+    color: #555;
+    font-weight: normal;
+  }

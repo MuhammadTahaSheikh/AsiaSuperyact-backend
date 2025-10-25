@@ -1,0 +1,156 @@
+.offer-about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00215a;
+  padding: 40px;
+  color: #ffffff;
+}
+
+.offer-content {
+  display: flex;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.offer-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.asia_offer_content {
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30.08px;
+  letter-spacing: 1.600000023841858px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.price_content_offer {
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 400;
+
+  letter-spacing: 1.600000023841858px;
+  text-align: left;
+  color: #ffffff;
+}
+.offer-icons {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.icon {
+  text-align: center;
+  display: flex;
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.icon p {
+  position: relative;
+  top: 15px;
+  left: 15px;
+}
+
+.enquire-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.offer-image {
+  flex: 1;
+  max-width: 600px;
+}
+
+.offer-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Responsive Styles */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .offer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .offer-text {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .offer-text h1 {
+    font-size: 32px;
+  }
+
+  .offer-text p {
+    font-size: 15px;
+  }
+
+  .offer-icons {
+    gap: 20px;
+  }
+
+  .offer-image {
+    max-width: 80%;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  .offer-about-container {
+    padding: 20px;
+  }
+
+  .offer-text h1 {
+    font-size: 28px;
+  }
+
+  .offer-text p {
+    font-size: 14px;
+  }
+
+  .offer-icons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon p {
+    font-size: 12px;
+  }
+
+  .enquire-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .offer-image {
+    max-width: 100%;
+  }
+
+  .offer-image img {
+    border-radius: 5px;
+  }
+}

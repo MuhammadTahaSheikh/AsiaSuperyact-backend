@@ -1,0 +1,47 @@
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+}
+
+.yacht-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+.form-group input::placeholder {
+    color: #555;
+}
+@media (max-width: 768px) {
+    .yacht-form {
+        grid-template-columns: 1fr;
+    }
+}
